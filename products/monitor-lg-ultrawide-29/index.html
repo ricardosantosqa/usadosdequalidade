@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NovaChance | Produto</title>
+    <link rel="icon" href="../../logos/favIcon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -11,30 +12,13 @@
   </head>
   <body data-page="product">
     <a class="skip-link" href="#product-detail">Pular para o conteúdo</a>
-
     <header class="site-header">
       <a class="brand-logo-svg" href="../../index.html" aria-label="Voltar para a home NovaChance">
-        <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="44" height="44" rx="12" fill="url(#hLogoGrad)"/>
-          <path d="M10 32V12l9 13 9-13v20" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M28 18l6-6" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
-          <circle cx="34" cy="12" r="3" fill="#c084fc"/>
-          <defs>
-            <linearGradient id="hLogoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7b39ff"/>
-              <stop offset="1" stop-color="#a855f7"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="brand-text">
-          <span class="brand-name">Nova<em>Chance</em></span>
-        </div>
+        <img class="brand-logo-img" src="../../logos/logo.svg" alt="NovaChance" />
+        <span class="brand-slogan">A forma inteligente de conquistar mais pagando menos.</span>
       </a>
       <nav class="header-actions" aria-label="Navegação da página">
-        <a class="ghost-button" href="../../index.html#catalogo">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Voltar ao catálogo
-        </a>
+        <a class="ghost-button" href="../../index.html#catalogo">Voltar ao catálogo</a>
         <button class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
           <span class="theme-toggle__icon" aria-hidden="true">☾</span>
           <span class="theme-toggle__label">Tema</span>
@@ -42,158 +26,10 @@
       </nav>
     </header>
 
-    <main id="product-detail">
-      <div class="product-detail">
-        <!-- MEDIA -->
-        <div class="product-detail__media">
-          <div class="detail-main-image">
-            <img id="main-img" src="https://placehold.co/600x450/1b1129/9b6bff?text=Monitor+LG+UltraWide" alt="Monitor LG UltraWide 29 polegadas" />
-          </div>
-          <div class="thumbnail-list" role="list">
-            <button class="thumbnail-button" aria-current="true" aria-label="Ver imagem principal" onclick="setImg(this, 'https://placehold.co/600x450/1b1129/9b6bff?text=Monitor+LG+UltraWide', 'Monitor LG UltraWide 29 polegadas')">
-              <img src="https://placehold.co/200x200/1b1129/9b6bff?text=Frente" alt="Frente do monitor" />
-            </button>
-            <button class="thumbnail-button" aria-current="false" aria-label="Ver detalhe lateral" onclick="setImg(this, 'https://placehold.co/600x450/221040/c084fc?text=Detalhe+Lateral', 'Detalhe lateral do monitor')">
-              <img src="https://placehold.co/200x200/221040/c084fc?text=Lateral" alt="Detalhe lateral" />
-            </button>
-            <button class="thumbnail-button" aria-current="false" aria-label="Ver detalhe traseiro" onclick="setImg(this, 'https://placehold.co/600x450/180e24/95f0bf?text=Detalhe+Traseiro', 'Detalhe traseiro do monitor')">
-              <img src="https://placehold.co/200x200/180e24/95f0bf?text=Traseiro" alt="Detalhe traseiro" />
-            </button>
-          </div>
-        </div>
+    <main id="product-detail"></main>
 
-        <!-- CONTENT -->
-        <div class="product-detail__content">
-          <p class="eyebrow">✦ Produto revisado · Metrô São Judas</p>
-          <h1 style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: .5rem;">Monitor LG UltraWide 29"</h1>
-          <p style="color: var(--muted); margin-bottom: 1.25rem;">Tela IPS revisada com ótimo espaço para produtividade e entretenimento.</p>
+    <footer class="site-footer"></footer>
 
-          <div class="price" style="font-size: 2rem; margin-bottom: 1.25rem;">R$ 1.149,00</div>
-
-          <p>Monitor LG UltraWide de 29 polegadas com proporção 21:9, ideal para multitarefa, edição e estudos. Item revisado, com excelente definição, base estável e pronto para integrar um setup produtivo.</p>
-
-          <ul class="detail-meta" aria-label="Informações do produto">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:.4rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <strong>Retirada:</strong> Estação Metrô São Judas
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:.4rem"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              <strong>Pagamento:</strong> PIX · Transferência · Dinheiro
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:.4rem"><polyline points="20 6 9 17 4 12"/></svg>
-              <strong>Estado:</strong> Revisado e validado por QA
-            </li>
-          </ul>
-
-          <ul class="size-list" aria-label="Especificações">
-            <li>29 polegadas</li>
-            <li>Formato 21:9</li>
-          </ul>
-
-          <div class="product-actions" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem;">
-            <a class="primary-button" href="https://wa.me/5511999999999?text=Olá,%20tenho%20interesse%20no%20Monitor%20LG%20UltraWide%2029%22!" target="_blank" rel="noopener" style="width: 100%; justify-content: center;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Tenho interesse · WhatsApp
-            </a>
-            <a class="ghost-button" href="../../index.html#catalogo" style="width: 100%; justify-content: center;">Ver outros produtos</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- NAVIGATION BETWEEN PRODUCTS - IMPROVED -->
-      <nav class="product-nav" aria-label="Navegação entre produtos">
-        <a class="nav-button" href="./index.html" aria-label="Produto anterior: Cafeteira Nespresso">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Cafeteira Nespresso
-        </a>
-        <a class="nav-button nav-button--home" href="../../index.html#catalogo" aria-label="Ver todo o catálogo">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Catálogo
-        </a>
-        <a class="nav-button" href="./index.html" aria-label="Próximo produto: Cadeira Ergonômica">
-          Cadeira Ergonômica
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </nav>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="site-footer__inner">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="44" height="44" rx="12" fill="url(#fLogoGrad2)"/>
-              <path d="M10 32V12l9 13 9-13v20" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M28 18l6-6" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
-              <circle cx="34" cy="12" r="3" fill="#c084fc"/>
-              <defs>
-                <linearGradient id="fLogoGrad2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#7b39ff"/>
-                  <stop offset="1" stop-color="#a855f7"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <span class="footer-brand-name">Nova<em>Chance</em></span>
-          </div>
-          <p class="footer-slogan">A forma inteligente de conquistar <em>mais</em> pagando <em>menos.</em></p>
-          <div class="footer-trust-badges">
-            <span class="trust-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Compra Segura
-            </span>
-            <span class="trust-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              Pagamento Seguro
-            </span>
-          </div>
-        </div>
-        <div class="footer-links-group" style="grid-template-columns: repeat(2, 1fr);">
-          <div class="footer-col">
-            <h4 class="footer-col-title">Navegação</h4>
-            <ul class="footer-links">
-              <li><a href="../../index.html">Início</a></li>
-              <li><a href="../../index.html#catalogo">Catálogo</a></li>
-              <li><a href="../../index.html#beneficios">Benefícios</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 class="footer-col-title">Contato</h4>
-            <ul class="footer-links">
-              <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a></li>
-              <li><span class="footer-location">Metrô São Judas, SP</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 NovaChance. Todos os direitos reservados.</p>
-        <div class="footer-bottom-badges">
-          <span class="trust-badge">✓ Satisfação Garantida</span>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Theme toggle
-      const toggle = document.querySelector('.theme-toggle');
-      toggle?.addEventListener('click', () => {
-        const isLight = document.documentElement.dataset.theme === 'light';
-        document.documentElement.dataset.theme = isLight ? '' : 'light';
-        toggle.setAttribute('aria-pressed', String(!isLight));
-        toggle.querySelector('.theme-toggle__icon').textContent = isLight ? '☾' : '☀';
-      });
-
-      // Image gallery
-      function setImg(btn, src, alt) {
-        document.querySelectorAll('.thumbnail-button').forEach(b => b.setAttribute('aria-current', 'false'));
-        btn.setAttribute('aria-current', 'true');
-        const mainImg = document.getElementById('main-img');
-        mainImg.src = src;
-        mainImg.alt = alt;
-      }
-    </script>
+    <script src="../../app.js" defer></script>
   </body>
 </html>

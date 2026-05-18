@@ -91,16 +91,54 @@ function renderFooter(product) {
   if (!footer) return;
 
   const whatsappMessage = currentPageMessage(product);
+  const homePrefix = document.body?.dataset?.page === 'product' ? '../../' : './';
   footer.innerHTML = `
     <div class="site-footer__inner">
-      <div class="footer-meta">
-        <span class="footer-avatar" aria-hidden="true">SQ</span>
-        <div>
-          <strong>Desenvolvido por SantosQA</strong>
-          <span>Layout acessível, responsivo e preparado para GitHub Pages.</span>
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="${homePrefix}logos/logo.svg" alt="NovaChance" />
+        </div>
+        <p class="footer-slogan">A forma inteligente de conquistar <em>mais</em> pagando <em>menos.</em></p>
+        <div class="footer-trust-badges">
+          <span class="trust-badge">Compra Segura</span>
+          <span class="trust-badge">Pagamento Seguro</span>
+          <span class="trust-badge">Suporte Dedicado</span>
         </div>
       </div>
-      <div class="footer-links" aria-label="Links SantosQA">
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="${homePrefix}index.html">Início</a></li>
+            <li><a href="${homePrefix}index.html#beneficios">Benefícios</a></li>
+            <li><a href="${homePrefix}index.html#catalogo">Catálogo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Categorias</h4>
+          <ul class="footer-links">
+            <li><a href="${homePrefix}index.html#catalogo">💻 Tecnologia</a></li>
+            <li><a href="${homePrefix}index.html#catalogo">🏠 Casa</a></li>
+            <li><a href="${homePrefix}index.html#catalogo">🪴 Decoração</a></li>
+            <li><a href="${homePrefix}index.html#catalogo">👟 Estilo & Bem-estar</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contato</h4>
+          <ul class="footer-links">
+            <li><a href="${buildWhatsAppUrl(whatsappMessage)}" target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><span class="footer-location">Metrô São Judas, SP</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-social-dock" aria-label="Redes de Ricardo Santos">
+        <span class="footer-profile-mark" aria-hidden="true">⚡</span>
+        <span class="footer-profile">
+          <strong>Ricardo Santos</strong>
+          <small>@SantosQA</small>
+        </span>
         <a class="icon-link" href="https://santosqa.github.io/" target="_blank" rel="noreferrer" aria-label="Site SantosQA">${icons.site}</a>
         <a class="icon-link" href="https://www.linkedin.com/in/santosqa/" target="_blank" rel="noreferrer" aria-label="LinkedIn SantosQA">${icons.linkedin}</a>
         <a class="icon-link" href="https://github.com/santosqa" target="_blank" rel="noreferrer" aria-label="GitHub SantosQA">${icons.github}</a>
@@ -179,23 +217,23 @@ function renderFilteredProducts(products, category) {
     return;
   }
 
-  list.innerHTML = filtered
-    .map(
-      (product) => `
+  const renderProductCard = (product) => `
         <article class="product-card">
           <div class="product-card__image">
             <img src="${resolvePath(`./${product.mainImageUrl}`)}" alt="${product.galleryUrls?.[0]?.alt || product.title}" loading="lazy" />
           </div>
           <div class="product-card__content">
-            <div>
-              <span class="tag">Retirada: ${PICKUP_LOCATION}</span>
+            <h3>${product.title}</h3>
+            <p class="product-short-desc">${product.shortDescription}</p>
+            <div class="product-meta">
+              <strong class="price">${product.price}</strong>
+              <span class="tag">${product.paymentMethods?.slice(0, 2).join(' · ') || FIXED_PAYMENT}</span>
             </div>
-            <div>
-              <h3>${product.title}</h3>
-              <p>${product.shortDescription}</p>
+            <div class="product-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Retirada: ${PICKUP_LOCATION.replace('Estação ', '')}
             </div>
-            <strong class="price">${product.price}</strong>
-            <div class="product-actions">
+            <div class="product-actions product-actions--card">
               <a class="ghost-button" href="${formatProductUrl(product)}">Ver detalhes</a>
               <a
                 class="primary-button"
@@ -213,9 +251,19 @@ function renderFilteredProducts(products, category) {
             </div>
           </div>
         </article>
-      `,
-    )
-    .join('');
+      `;
+  const midpoint = Math.ceil(filtered.length / 2);
+  const firstCarousel = filtered.slice(0, midpoint).map(renderProductCard).join('');
+  const secondCarousel = filtered.slice(midpoint).map(renderProductCard).join('');
+
+  list.innerHTML = `
+    <div class="product-carousel" aria-label="Produtos em destaque">
+      <div class="product-carousel__track">${firstCarousel}</div>
+    </div>
+    <div class="product-carousel" aria-label="Mais produtos">
+      <div class="product-carousel__track">${secondCarousel || firstCarousel}</div>
+    </div>
+  `;
 }
 
 function renderProduct(products) {
@@ -275,21 +323,22 @@ function renderProduct(products) {
         <p>${product.shortDescription}</p>
         <strong class="price">${product.price}</strong>
         <p>${product.description}</p>
-        ${product.sizes?.length ? `<div><h2>Tamanhos</h2><ul class="size-list">${product.sizes.map((size) => `<li>${size}</li>`).join('')}</ul></div>` : ''}
         <ul class="detail-meta">
+          <li><strong>Tamanho:</strong> ${product.sizes?.length ? product.sizes.join(' · ') : 'Consultar disponibilidade'}</li>
           <li><strong>Pagamento:</strong> ${product.paymentMethods?.join(', ') || FIXED_PAYMENT}</li>
           <li><strong>Retirada:</strong> Linha Azul do metrô — ${product.pickupLocation || PICKUP_LOCATION}</li>
         </ul>
-        <div class="product-actions">
+        ${product.sizes?.length ? `<div><h2>Tamanhos</h2><ul class="size-list">${product.sizes.map((size) => `<li>${size}</li>`).join('')}</ul></div>` : ''}
+        <div class="product-actions product-actions--detail">
           <a class="primary-button" data-whatsapp-link="product-detail" href="#">Fechar negócio no WhatsApp</a>
           <a class="ghost-button" href="${resolvePath('../../index.html#catalogo')}">Voltar para Home</a>
         </div>
       </div>
     </section>
     <nav class="product-nav" aria-label="Navegação entre produtos">
-      ${previous ? `<a class="nav-button" href="${new URL(`../${previous.slug}/index.html`, window.location.href).toString()}">← Produto anterior</a>` : '<span class="nav-button" aria-disabled="true">← Produto anterior</span>'}
-      <a class="nav-button" href="${resolvePath('../../index.html#catalogo')}">Home</a>
-      ${next ? `<a class="nav-button" href="${new URL(`../${next.slug}/index.html`, window.location.href).toString()}">Próximo produto →</a>` : '<span class="nav-button" aria-disabled="true">Próximo produto →</span>'}
+      ${previous ? `<a class="nav-button nav-button--prev" href="${new URL(`../${previous.slug}/index.html`, window.location.href).toString()}"><span class="nav-button__direction">← Produto anterior</span><span class="nav-button__label">${previous.title}</span></a>` : '<span class="nav-button nav-button--prev" aria-disabled="true"><span class="nav-button__direction">← Produto anterior</span><span class="nav-button__label">Você está no primeiro item</span></span>'}
+      <a class="nav-button nav-button--home" href="${resolvePath('../../index.html#catalogo')}"><span class="nav-button__direction">Catálogo</span><span class="nav-button__label">Voltar para Home</span></a>
+      ${next ? `<a class="nav-button nav-button--next" href="${new URL(`../${next.slug}/index.html`, window.location.href).toString()}"><span class="nav-button__direction">Próximo produto →</span><span class="nav-button__label">${next.title}</span></a>` : '<span class="nav-button nav-button--next" aria-disabled="true"><span class="nav-button__direction">Próximo produto →</span><span class="nav-button__label">Você chegou ao fim</span></span>'}
     </nav>
   `;
 

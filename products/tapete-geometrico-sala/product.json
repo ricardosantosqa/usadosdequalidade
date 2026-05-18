@@ -5,6 +5,7 @@
   "shortDescription": "Peça decorativa higienizada com textura macia e visual contemporâneo.",
   "description": "Tapete para sala ou quarto com padronagem geométrica elegante, toque macio e excelente apresentação visual. Já higienizado, pronto para uso e ótimo para renovar a decoração sem gastar demais.",
   "price": "R$ 249,00",
+  "category": "decoracao",
   "pickupLocation": "Estação Metrô São Judas",
   "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
   "sizes": ["1,50 m x 2,00 m"],
