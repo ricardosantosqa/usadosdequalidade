@@ -5,23 +5,16 @@
       "order": 1,
       "title": "Cadeira ergonômica Uni",
       "shortDescription": "Conforto para home office com estrutura revisada e rodízios silenciosos.",
-      "description": "Cadeira com encosto em tela respirável, ajuste de altura, base metálica reforçada e apoio de braços acolchoado. Revisada para oferecer conforto diário em home office, estável e pronta para uso.\n\n✅ Revisada e higienizada\n✅ Rodízios silenciosos\n✅ Ajuste de altura e inclinação\n\nRetirada na Linha Azul do metrô (Estação Metrô São Judas).",
+      "description": "Cadeira com encosto em tela respirável, ajuste de altura, base metálica reforçada e apoio de braços acolchoado. Revisada para oferecer conforto diário em home office, estudos ou setup profissional.",
       "price": "R$ 699,00",
       "pickupLocation": "Estação Metrô São Judas",
       "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
       "sizes": ["Altura ajustável 96-106 cm", "Assento 50 x 49 cm"],
-      "mainImage": "./main.svg",
+      "mainImage": "./photo-1.jpg",
       "gallery": [
-        { "src": "./main.svg", "alt": "Cadeira ergonômica Uni em destaque sobre fundo roxo" },
-        { "src": "./detail-1.svg", "alt": "Detalhe da estrutura revisada da cadeira ergonômica Uni" },
-        { "src": "./detail-2.svg", "alt": "Informações visuais sobre o estado revisado da cadeira ergonômica Uni" }
-      ],
-      "url": "products/cadeira-ergonomica-uni/index.html",
-      "mainImageUrl": "products/cadeira-ergonomica-uni/main.svg",
-      "galleryUrls": [
-        { "src": "products/cadeira-ergonomica-uni/main.svg", "alt": "Cadeira ergonômica Uni em destaque sobre fundo roxo" },
-        { "src": "products/cadeira-ergonomica-uni/detail-1.svg", "alt": "Detalhe da estrutura revisada da cadeira ergonômica Uni" },
-        { "src": "products/cadeira-ergonomica-uni/detail-2.svg", "alt": "Informações visuais sobre o estado revisado da cadeira ergonômica Uni" }
+        { "src": "./photo-1.jpg", "alt": "Cadeira ergonômica Uni vista frontal" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe do encosto em tela e ajustes da cadeira" },
+        { "src": "./photo-3.jpg", "alt": "Cadeira ergonômica Uni no ambiente de escritório" }
       ]
     },
     {
@@ -29,23 +22,16 @@
       "order": 2,
       "title": "Monitor LG UltraWide 29\"",
       "shortDescription": "Tela IPS revisada com ótimo espaço para produtividade e entretenimento.",
-      "description": "Monitor LG UltraWide de 29 polegadas com proporção 21:9, ideal para multitarefa, edição e estudos. Item revisado, com excelente definição, base estável e pronto para instalar.\n\n✅ Revisado e testado\n✅ Ótimo para produtividade\n✅ Excelente para multitarefa\n\nRetirada na Linha Azul do metrô (Estação Metrô São Judas).",
+      "description": "Monitor LG UltraWide de 29 polegadas com proporção 21:9, ideal para multitarefa, edição e estudos. Item revisado, com excelente definição, base estável e pronto para integrar um setup produtivo.",
       "price": "R$ 1.149,00",
       "pickupLocation": "Estação Metrô São Judas",
       "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
       "sizes": ["29 polegadas", "Formato 21:9"],
-      "mainImage": "./main.svg",
+      "mainImage": "./photo-1.jpg",
       "gallery": [
-        { "src": "./main.svg", "alt": "Monitor LG UltraWide 29 polegadas em composição tecnológica" },
-        { "src": "./detail-1.svg", "alt": "Detalhes do monitor LG UltraWide revisado" },
-        { "src": "./detail-2.svg", "alt": "Arte destacando a qualidade validada do monitor LG UltraWide" }
-      ],
-      "url": "products/monitor-lg-ultrawide-29/index.html",
-      "mainImageUrl": "products/monitor-lg-ultrawide-29/main.svg",
-      "galleryUrls": [
-        { "src": "products/monitor-lg-ultrawide-29/main.svg", "alt": "Monitor LG UltraWide 29 polegadas em composição tecnológica" },
-        { "src": "products/monitor-lg-ultrawide-29/detail-1.svg", "alt": "Detalhes do monitor LG UltraWide revisado" },
-        { "src": "products/monitor-lg-ultrawide-29/detail-2.svg", "alt": "Arte destacando a qualidade validada do monitor LG UltraWide" }
+        { "src": "./photo-1.jpg", "alt": "Monitor LG UltraWide 29 polegadas sobre mesa" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe da tela e bordas do monitor" },
+        { "src": "./photo-3.jpg", "alt": "Monitor UltraWide em setup de produtividade" }
       ]
     },
     {
@@ -53,23 +39,16 @@
       "order": 3,
       "title": "Cafeteira Nespresso Essenza Mini",
       "shortDescription": "Compacta, elegante e pronta para cafés rápidos com cápsulas originais.",
-      "description": "Cafeteira compacta com aquecimento rápido, reservatório higienizado e ótimo estado de conservação. Ideal para cozinhas pequenas e para quem quer praticidade no dia a dia.\n\n✅ Revisada e higienizada\n✅ Aquecimento rápido\n✅ Compacta\n\nRetirada na Linha Azul do metrô (Estação Metrô São Judas).",
+      "description": "Cafeteira compacta com aquecimento rápido, reservatório higienizado e ótimo estado de conservação. Ideal para cozinhas pequenas, escritórios e para quem quer praticidade sem abrir mão do sabor.",
       "price": "R$ 359,00",
       "pickupLocation": "Estação Metrô São Judas",
       "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
       "sizes": [],
-      "mainImage": "./main.svg",
+      "mainImage": "./photo-1.jpg",
       "gallery": [
-        { "src": "./main.svg", "alt": "Cafeteira Nespresso Essenza Mini com acabamento moderno" },
-        { "src": "./detail-1.svg", "alt": "Detalhe do uso da cafeteira Nespresso Essenza Mini" },
-        { "src": "./detail-2.svg", "alt": "Informação visual sobre o estado revisado da cafeteira Nespresso Essenza Mini" }
-      ],
-      "url": "products/cafeteira-nespresso-essenza-mini/index.html",
-      "mainImageUrl": "products/cafeteira-nespresso-essenza-mini/main.svg",
-      "galleryUrls": [
-        { "src": "products/cafeteira-nespresso-essenza-mini/main.svg", "alt": "Cafeteira Nespresso Essenza Mini com acabamento moderno" },
-        { "src": "products/cafeteira-nespresso-essenza-mini/detail-1.svg", "alt": "Detalhe do uso da cafeteira Nespresso Essenza Mini" },
-        { "src": "products/cafeteira-nespresso-essenza-mini/detail-2.svg", "alt": "Informação visual sobre o estado revisado da cafeteira Nespresso Essenza Mini" }
+        { "src": "./photo-1.jpg", "alt": "Cafeteira Nespresso Essenza Mini em bancada" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe do reservatório e botões da cafeteira" },
+        { "src": "./photo-3.jpg", "alt": "Cafeteira com xícara de café ao lado" }
       ]
     },
     {
@@ -77,23 +56,118 @@
       "order": 4,
       "title": "Tapete geométrico para sala",
       "shortDescription": "Peça decorativa higienizada com textura macia e visual contemporâneo.",
-      "description": "Tapete para sala ou quarto com padronagem geométrica elegante, toque macio e excelente apresentação visual. Já higienizado, pronto para uso e ótimo para renovar a decoração.\n\n✅ Higienizado\n✅ Textura macia\n✅ Padronagem moderna\n\nRetirada na Linha Azul do metrô (Estação Metrô São Judas).",
+      "description": "Tapete para sala ou quarto com padronagem geométrica elegante, toque macio e excelente apresentação visual. Já higienizado, pronto para uso e ótimo para renovar a decoração sem gastar demais.",
       "price": "R$ 249,00",
       "pickupLocation": "Estação Metrô São Judas",
       "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
       "sizes": ["1,50 m x 2,00 m"],
-      "mainImage": "./main.svg",
+      "mainImage": "./photo-1.jpg",
       "gallery": [
-        { "src": "./main.svg", "alt": "Tapete geométrico para sala com tons modernos" },
-        { "src": "./detail-1.svg", "alt": "Detalhe da textura do tapete geométrico para sala" },
-        { "src": "./detail-2.svg", "alt": "Arte informativa sobre o estado do tapete geométrico" }
-      ],
-      "url": "products/tapete-geometrico-sala/index.html",
-      "mainImageUrl": "products/tapete-geometrico-sala/main.svg",
-      "galleryUrls": [
-        { "src": "products/tapete-geometrico-sala/main.svg", "alt": "Tapete geométrico para sala com tons modernos" },
-        { "src": "products/tapete-geometrico-sala/detail-1.svg", "alt": "Detalhe da textura do tapete geométrico para sala" },
-        { "src": "products/tapete-geometrico-sala/detail-2.svg", "alt": "Arte informativa sobre o estado do tapete geométrico" }
+        { "src": "./photo-1.jpg", "alt": "Tapete geométrico em sala de estar" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe da textura e padronagem do tapete" },
+        { "src": "./photo-3.jpg", "alt": "Tapete geométrico próximo a sofá" }
+      ]
+    },
+    {
+      "slug": "iphone-12-128gb",
+      "order": 5,
+      "title": "iPhone 12 128GB (semi-novo)",
+      "shortDescription": "Aparelho revisado, Face ID funcionando e bateria em ótimo estado.",
+      "description": "iPhone 12 de 128GB com funcionamento 100%, revisado e testado. Ideal para quem quer performance, câmeras excelentes e compatibilidade com 5G.\n\n✅ Testado (Wi‑Fi, 4G/5G, câmeras, Face ID, alto-falantes)\n✅ Sem bloqueios\n✅ Acompanha cabo\n\nRetirada na Linha Azul do metrô — Estação Metrô São Judas.",
+      "price": "R$ 2.199,00",
+      "pickupLocation": "Estação Metrô São Judas",
+      "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
+      "sizes": ["128GB"],
+      "mainImage": "./photo-1.jpg",
+      "gallery": [
+        { "src": "./photo-1.jpg", "alt": "iPhone 12 em cima de mesa" },
+        { "src": "./photo-2.jpg", "alt": "Traseira do iPhone 12 mostrando câmeras" },
+        { "src": "./photo-3.jpg", "alt": "Tela do iPhone 12 ligada" }
+      ]
+    },
+    {
+      "slug": "fone-bluetooth-anc",
+      "order": 6,
+      "title": "Fone Bluetooth com Cancelamento de Ruído (ANC)",
+      "shortDescription": "Graves fortes, conforto e cancelamento ativo para foco total.",
+      "description": "Fone Bluetooth over-ear com ANC para reduzir ruído externo, ideal para trabalho, estudos e viagens. Revisado e higienizado.\n\n✅ ANC funcionando\n✅ Almofadas em bom estado\n✅ Bateria com boa duração\n\nRetirada na Linha Azul do metrô — Estação Metrô São Judas.",
+      "price": "R$ 349,00",
+      "pickupLocation": "Estação Metrô São Judas",
+      "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
+      "sizes": [],
+      "mainImage": "./photo-1.jpg",
+      "gallery": [
+        { "src": "./photo-1.jpg", "alt": "Fone bluetooth over-ear" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe das almofadas e arco do fone" },
+        { "src": "./photo-3.jpg", "alt": "Fone em estojo ou sobre mesa" }
+      ]
+    },
+    {
+      "slug": "airfryer-4l-digital",
+      "order": 7,
+      "title": "Airfryer Digital 4L",
+      "shortDescription": "Cesto antiaderente e painel digital — prática para o dia a dia.",
+      "description": "Airfryer 4L com painel digital e timer. Item revisado, higienizado e pronto para uso.\n\n✅ Cesto antiaderente\n✅ Painel digital\n✅ Ideal para porções e refeições rápidas\n\nRetirada na Linha Azul do metrô — Estação Metrô São Judas.",
+      "price": "R$ 289,00",
+      "pickupLocation": "Estação Metrô São Judas",
+      "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
+      "sizes": ["4 litros"],
+      "mainImage": "./photo-1.jpg",
+      "gallery": [
+        { "src": "./photo-1.jpg", "alt": "Airfryer digital em bancada" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe do painel digital da airfryer" },
+        { "src": "./photo-3.jpg", "alt": "Cesto e interior da airfryer" }
+      ]
+    },
+    {
+      "slug": "mochila-antifurto-usb",
+      "order": 8,
+      "title": "Mochila executiva antifurto com USB",
+      "shortDescription": "Compartimentos organizados, porta USB e material resistente.",
+      "description": "Mochila executiva ideal para trabalho/estudos, com design antifurto e bolsos internos para notebook e acessórios. Revisada e higienizada.\n\n✅ Espaço para notebook\n✅ Porta USB externa\n✅ Material resistente\n\nRetirada na Linha Azul do metrô — Estação Metrô São Judas.",
+      "price": "R$ 179,00",
+      "pickupLocation": "Estação Metrô São Judas",
+      "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
+      "sizes": ["Até 15,6\""],
+      "mainImage": "./photo-1.jpg",
+      "gallery": [
+        { "src": "./photo-1.jpg", "alt": "Mochila executiva antifurto" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe dos compartimentos internos" },
+        { "src": "./photo-3.jpg", "alt": "Mochila em ambiente urbano" }
+      ]
+    },
+    {
+      "slug": "lampada-smart-rgb-kit",
+      "order": 9,
+      "title": "Kit Lâmpadas Smart RGB Wi‑Fi",
+      "shortDescription": "Controle por app, cenas e cores — transforme o ambiente em segundos.",
+      "description": "Kit de lâmpadas inteligentes RGB com Wi‑Fi. Fácil de configurar, funciona com app e permite criar cenas, ajustar brilho e temperatura de cor.\n\n✅ RGB + branco quente/frio\n✅ Controle por app\n✅ Ótimo para quarto e sala\n\nRetirada na Linha Azul do metrô — Estação Metrô São Judas.",
+      "price": "R$ 129,00",
+      "pickupLocation": "Estação Metrô São Judas",
+      "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
+      "sizes": ["E27"],
+      "mainImage": "./photo-1.jpg",
+      "gallery": [
+        { "src": "./photo-1.jpg", "alt": "Lâmpada smart RGB acesa" },
+        { "src": "./photo-2.jpg", "alt": "Aplicativo controlando lâmpada smart" },
+        { "src": "./photo-3.jpg", "alt": "Ambiente iluminado com luz colorida" }
+      ]
+    },
+    {
+      "slug": "cadeira-gamer-reclinavel",
+      "order": 10,
+      "title": "Cadeira gamer reclinável",
+      "shortDescription": "Reclinável, confortável e revisada — ideal para setup e longas sessões.",
+      "description": "Cadeira gamer reclinável com ajuste de altura, apoio de braços e inclinação. Revisada e pronta para uso, ótima para jogos e home office.\n\n✅ Reclinável\n✅ Ajuste de altura\n✅ Conforto prolongado\n\nRetirada na Linha Azul do metrô — Estação Metrô São Judas.",
+      "price": "R$ 599,00",
+      "pickupLocation": "Estação Metrô São Judas",
+      "paymentMethods": ["PIX", "Transferência", "Dinheiro"],
+      "sizes": ["Altura ajustável"],
+      "mainImage": "./photo-1.jpg",
+      "gallery": [
+        { "src": "./photo-1.jpg", "alt": "Cadeira gamer em frente ao computador" },
+        { "src": "./photo-2.jpg", "alt": "Detalhe do encosto e apoios da cadeira gamer" },
+        { "src": "./photo-3.jpg", "alt": "Cadeira gamer reclinada" }
       ]
     }
   ]
