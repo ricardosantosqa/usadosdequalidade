@@ -39,7 +39,8 @@ for product_file in sorted(PRODUCTS_DIR.glob('*/product.json')):
             f'Slug mismatch in {product_file}: folder is {product_file.parent.name}, slug is {slug}'
         )
 
-    data['url'] = f'products/{slug}/'
+    # Explicit index.html for maximum compatibility on GitHub Pages and local hosting
+    data['url'] = f'products/{slug}/index.html'
     data['mainImageUrl'] = with_product_prefix(slug, data['mainImage'])
     data['galleryUrls'] = [
         {
