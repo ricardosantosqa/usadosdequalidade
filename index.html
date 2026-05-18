@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaChance | Produtos revisados com preço justo</title>
+    <meta
+      name="description"
+      content="NovaChance: produtos revisados, qualidade validada e preços justos para conquistar mais pagando menos."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="brand-block">
+        <span class="brand-mark" aria-hidden="true">NC</span>
+        <div>
+          <p class="eyebrow">NovaChance</p>
+          <h1>A forma inteligente de conquistar mais pagando menos.</h1>
+        </div>
+      </div>
+      <nav class="header-actions" aria-label="Ações principais">
+        <a class="ghost-button" href="#catalogo">Explorar catálogo</a>
+        <button class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle__label">Tema</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="conteudo-principal">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Usados com qualidade premium</p>
+          <h2 id="hero-title">Seu próximo achado está pronto para um novo ciclo.</h2>
+          <p>
+            Produtos revisados, selecionados com cuidado e preparados para uma compra rápida,
+            transparente e sem complicação.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" data-whatsapp-link="home-hero" href="#">Entrar em contato</a>
+            <a class="ghost-button" href="#beneficios">Ver benefícios</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-panel__glow"></div>
+          <div class="hero-stats">
+            <span>🛒 Produtos revisados</span>
+            <span>✅ Qualidade validada</span>
+            <span>💰 Preços justos</span>
+            <span>♻️ Um novo ciclo para grandes produtos</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="beneficios" aria-labelledby="benefits-title">
+        <div class="section-heading">
+          <p class="eyebrow">Por que escolher a NovaChance?</p>
+          <h2 id="benefits-title">Compra segura, acessível e inteligente.</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <h3>🛒 Produtos revisados</h3>
+            <p>Cada item passa por checagem visual e funcional antes de entrar no catálogo.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>✅ Qualidade validada</h3>
+            <p>Informações claras, fotos objetivas e descrições fiéis ao estado do produto.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>💰 Preços justos</h3>
+            <p>Oportunidades para comprar bem, economizar e fechar negócio com confiança.</p>
+          </article>
+          <article class="benefit-card">
+            <h3>♻️ Um novo ciclo</h3>
+            <p>Mais valor para produtos excelentes e consumo mais consciente no dia a dia.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+        <div class="section-heading section-heading--row">
+          <div>
+            <p class="eyebrow">Catálogo atual</p>
+            <h2 id="catalog-title">Produtos prontos para retirada em São Judas.</h2>
+          </div>
+          <a class="primary-button" data-whatsapp-link="home-catalog" href="#">Fechar negócio pelo WhatsApp</a>
+        </div>
+        <div class="product-grid" id="product-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
