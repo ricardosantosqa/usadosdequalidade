@@ -916,12 +916,19 @@ p { margin-top: 0; }
 .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
 
 .footer-logo-img {
-  width: min(100%, 14rem);
-  max-height: 5.5rem;
+  width: clamp(9rem, 18vw, 19rem);
+  height: auto;
+  margin-top: 0.9rem;
+  margin-left: -0.7rem;
   object-fit: contain;
-  object-position: left center;
+  object-position: left;
 }
-
+@media (max-width: 600px) {
+  .footer-logo-img {
+    width: clamp(17rem, 40vw, 23rem); 
+    margin-top: 0.2rem; 
+  }
+}
 .footer-slogan {
   color: var(--muted); font-size: .88rem; line-height: 1.6;
   margin: 0; max-width: 26ch;
