@@ -1,8 +1,8 @@
-const STORAGE_KEY = 'novachance-theme';
-const ACTIVE_CATEGORY_KEY = 'novachance-active-category';
+const STORAGE_KEY = 'usadosdequalidade-theme';
+const ACTIVE_CATEGORY_KEY = 'usadosdequalidade-active-category';
 const DEFAULT_DARK = 'dark';
 const WHATSAPP_NUMBER = '5511982633161';
-const SITE_NAME = 'NovaChance';
+const SITE_NAME = 'UsadosDeQualidade';
 const PICKUP_LOCATION = 'Estação Metrô São Judas';
 const FIXED_PAYMENT = 'PIX, Transferência, Dinheiro';
 
@@ -82,7 +82,7 @@ function shareHome() {
 }
 
 // ─── TEMA: ponto único de verdade ────────────────────────────────────────────
-// Fonte: localStorage['novachance-theme'] → 'dark' | 'light'
+// Fonte: localStorage['usadosdequalidade-theme'] → 'dark' | 'light'
 // Regra:  só muda ao clicar no botão. Navegar entre páginas nunca altera o tema.
 
 function applyTheme(theme) {
@@ -137,7 +137,7 @@ function renderFooter(product) {
       <div class="footer-col">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img class="footer-logo-img" src="${homePrefix}logos/logo.svg" alt="NovaChance" />
+            <img class="footer-logo-img" src="${homePrefix}logos/logo.png" alt="UsadosDeQualidade" />
           </div>
           <p class="footer-slogan">A forma inteligente de conquistar <em>mais</em> pagando <em>menos.</em></p>
           <div class="footer-badges">
@@ -186,7 +186,7 @@ function renderFooter(product) {
         <a class="icon-link" href="https://www.linkedin.com/in/santosqa/" target="_blank" rel="noreferrer" aria-label="LinkedIn SantosQA">${icons.linkedin}</a>
         <a class="icon-link" href="https://github.com/santosqa" target="_blank" rel="noreferrer" aria-label="GitHub SantosQA">${icons.github}</a>
         <a class="icon-link" href="https://www.instagram.com/santosqa_" target="_blank" rel="noreferrer" aria-label="Instagram SantosQA">${icons.instagram}</a>
-        <a class="icon-link" href="${buildWhatsAppUrl(whatsappMessage)}" target="_blank" rel="noreferrer" aria-label="WhatsApp NovaChance">${icons.whatsapp}</a>
+        <a class="icon-link" href="${buildWhatsAppUrl(whatsappMessage)}" target="_blank" rel="noreferrer" aria-label="WhatsApp UsadosDeQualidade">${icons.whatsapp}</a>
       </div>
     </div>
   `;

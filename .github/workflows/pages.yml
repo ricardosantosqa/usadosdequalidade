@@ -1,4 +1,4 @@
-name: Build and deploy NovaChance
+name: Build and deploy Usados de Qualidade
 
 on:
   push:

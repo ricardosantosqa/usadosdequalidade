@@ -26,7 +26,7 @@
 
 :root[data-theme='light'] {
   color-scheme: light;
-  --bg: #f3eeff;
+  --bg: #e4dbf8;
   --surface: rgba(255, 255, 255, 0.94);
   --surface-strong: #ffffff;
   --surface-alt: rgba(234, 223, 255, 0.92);
@@ -94,7 +94,7 @@ p { margin-top: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;
+  padding: 0.1rem 0;
   gap: 1.5rem;
 }
 
@@ -108,9 +108,16 @@ p { margin-top: 0; }
 }
 
 .brand-logo-img {
-  width: clamp(9rem, 18vw, 13rem);
+  width: clamp(9rem, 22vw, 22rem);;
   height: auto;
+  margin-top: 0.9rem;
   object-fit: contain;
+}
+@media (max-width: 600px) {
+  .brand-logo-img {
+    width: clamp(20rem, 46vw, 27rem); /* aumenta o valor mínimo para mobile */
+    margin-top: 0.2rem; /* opcional, ajuste se precisar de mais espaço */
+  }
 }
 
 .brand-slogan {
@@ -910,7 +917,7 @@ p { margin-top: 0; }
 
 .footer-logo-img {
   width: min(100%, 14rem);
-  max-height: 4.5rem;
+  max-height: 5.5rem;
   object-fit: contain;
   object-position: left center;
 }

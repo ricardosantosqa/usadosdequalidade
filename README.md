@@ -1,6 +1,6 @@
-# NovaChance
+# Usados de Qualidade
 
-Site estático de vendas para o projeto **NovaChance**, pensado para funcionar no GitHub Pages com catálogo automático gerado a partir das pastas de produtos.
+Site estático de vendas para o projeto **Usados de Qualidade**, pensado para funcionar no GitHub Pages com catálogo automático gerado a partir das pastas de produtos.
 
 ## Como rodar localmente
 
