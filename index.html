@@ -14,12 +14,11 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
   <!-- ═══ TEMA: aplica ANTES do render para evitar flash ═══════════════════
-         Fonte única: localStorage['Usados de Qualidade-theme']
-         Nunca altere o tema aqui — só leia. Alteração só ocorre via botão.  -->
-
+     Fonte única: localStorage['usadosdequalidade-theme']
+     Nunca altere o tema aqui — só leia. Alteração só ocorre via botão.  -->
   <script>
     (function () {
-      var t = localStorage.getItem('Usados de Qualidade-theme');
+      var t = localStorage.getItem('usadosdequalidade-theme');
       document.documentElement.dataset.theme =
         t !== null ? t : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     })();
@@ -307,7 +306,7 @@
       <div class="footer-col">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img class="footer-logo-img" src="../../logos/logo.png" alt="Usados de Qualidade">
+            <img class="footer-logo-img" src="../logos/logo.png" alt="UsadosDeQualidade">
           </div>
           <p class="footer-slogan">A forma inteligente de conquistar <em>mais</em> pagando <em>menos.</em></p>
           <div class="footer-badges">
@@ -330,7 +329,7 @@
             <h4 class="footer-col-title">Contato</h4>
             <ul class="footer-links">
               <li><a
-                  href="https://wa.me/5511982633161?text=Ol%C3%A1!%20Tenho%20interesse%20no%20produto%20%22Monitor%20LG%20UltraWide%2029%22%22%20da%20Usados de Qualidade.%20Link%3A%20http%3A%2F%2F127.0.0.1%3A5500%2Fproducts%2Fmonitor-lg-ultrawide-29%2Findex.html"
+                  href="https://wa.me/5511982633161?text=Ol%C3%A1!%20Tenho%20interesse%20no%20produto%20%22Cafeteira%20Nespresso%20Essenza%20Mini%22%20da%20UsadosDeQualidade.%20Link%3A%20https%3A%2F%2Fricardosantosqa.github.io%usadosdequalidade%2Fproducts%2Fcafeteira-nespresso-essenza-mini%2Findex.html"
                   target="_blank" rel="noreferrer">WhatsApp</a></li>
               <li><span class="footer-location">Metrô São Judas, SP</span></li>
             </ul>
@@ -379,8 +378,9 @@
             </path>
           </svg></a>
         <a class="icon-link"
-          href="https://wa.me/5511982633161?text=Ol%C3%A1!%20Tenho%20interesse%20no%20produto%20%22Monitor%20LG%20UltraWide%2029%22%22%20da%20Usados de Qualidade.%20Link%3A%20http%3A%2F%2F127.0.0.1%3A5500%2Fproducts%2Fmonitor-lg-ultrawide-29%2Findex.html"
-          target="_blank" rel="noreferrer" aria-label="WhatsApp Usados de Qualidade"><svg viewBox="0 0 24 24" aria-hidden="true">
+          href="https://wa.me/5511982633161?text=Ol%C3%A1!%20Tenho%20interesse%20no%20produto%20%22Cafeteira%20Nespresso%20Essenza%20Mini%22%20da%20UsadosDeQualidade.%20Link%3A%20https%3A%2F%2Fricardosantosqa.github.io%usadosdequalidade%2Fproducts%2Fcafeteira-nespresso-essenza-mini%2Findex.html"
+          target="_blank" rel="noreferrer" aria-label="WhatsApp UsadosDeQualidade"><svg viewBox="0 0 24 24"
+            aria-hidden="true">
             <path
               d="M20.52 3.48A11.89 11.89 0 0012.08 0 11.93 11.93 0 001.89 17.94L0 24l6.25-1.84a11.96 11.96 0 005.83 1.5h.01A11.92 11.92 0 0024 11.7a11.9 11.9 0 00-3.48-8.22ZM12.09 21.9h-.01a10 10 0 01-5.1-1.41l-.37-.22-3.7 1.09 1.09-3.6-.24-.37a10.03 10.03 0 0116.58-12.5 10.03 10.03 0 01-7.34 17.01Zm5.73-7.5c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.21.31-.8 1-.98 1.2-.18.21-.36.23-.67.08-.31-.16-1.31-.48-2.49-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.54-.08-.16-.7-1.67-.96-2.29-.25-.6-.5-.52-.7-.53h-.6c-.21 0-.54.08-.83.39-.28.31-1.09 1.06-1.09 2.58 0 1.52 1.12 3 1.28 3.2.16.21 2.2 3.36 5.33 4.7.74.32 1.31.51 1.76.65.74.23 1.41.2 1.94.12.59-.09 1.83-.74 2.09-1.45.26-.71.26-1.32.18-1.45-.08-.13-.28-.2-.59-.36Z">
             </path>
@@ -389,8 +389,17 @@
     </div>
   </footer>
   <script>
+    (function () {
+      var t = localStorage.getItem('usadosdequalidade-theme');
+      document.documentElement.dataset.theme =
+        t !== null ? t : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
+
+  <!-- No final do <body>, substituindo o script antigo -->
+  <script>
     // ── Tema ──────────────────────────────────────────────────────────────
-    const THEME_KEY = 'Usados de Qualidade-theme';
+    const THEME_KEY = 'usadosdequalidade-theme';
 
     function applyTheme(theme) {
       document.documentElement.dataset.theme = theme;

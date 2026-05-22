@@ -918,15 +918,15 @@ p { margin-top: 0; }
 .footer-logo-img {
   width: clamp(9rem, 18vw, 19rem);
   height: auto;
-  margin-top: 0.9rem;
+  margin-top: -1rem;
   margin-left: -0.7rem;
   object-fit: contain;
   object-position: left;
 }
 @media (max-width: 600px) {
   .footer-logo-img {
-    width: clamp(17rem, 40vw, 23rem); 
-    margin-top: 0.2rem; 
+    width: clamp(17rem, 35vw, 19rem); 
+    margin-top: -1rem; 
   }
 }
 .footer-slogan {
