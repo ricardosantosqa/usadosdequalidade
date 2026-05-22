@@ -259,7 +259,7 @@ function renderFilteredProducts(products, category) {
         <article class="product-card">
           <div class="product-card__image">
             <img src="${resolvePath(`./${product.mainImageUrl}`)}" alt="${product.galleryUrls?.[0]?.alt || product.title}" loading="lazy" />
-            <span class="product-badge">Testado</span>
+            <span class="product-badge">✅ Testado </span>
           </div>
           <div class="product-card__content">
             <h3>${product.title}</h3>
