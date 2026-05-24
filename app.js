@@ -14,6 +14,8 @@ const CATEGORIES = {
   decoracao: { label: 'Decoração', icon: '🎨' }
 };
 
+let catalogProducts = [];
+
 const icons = {
   site: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm6.92 9h-3.01a15.92 15.92 0 00-1.38-5.02A8.03 8.03 0 0118.92 11ZM12 4.04c.83 1.2 1.86 3.6 2.15 6.96H9.85C10.14 7.64 11.17 5.24 12 4.04ZM8.47 5.98A15.92 15.92 0 007.09 11H4.08a8.03 8.03 0 014.39-5.02ZM4.08 13h3.01c.17 1.82.63 3.55 1.38 5.02A8.03 8.03 0 014.08 13ZM12 19.96c-.83-1.2-1.86-3.6-2.15-6.96h4.3c-.29 3.36-1.32 5.76-2.15 6.96ZM15.53 18.02c.75-1.47 1.21-3.2 1.38-5.02h3.01a8.03 8.03 0 01-4.39 5.02ZM16.91 11H7.09c.18-2.07.74-3.93 1.55-5.35C9.46 4.27 10.61 3.5 12 3.5c1.39 0 2.54.77 3.36 2.15.81 1.42 1.37 3.28 1.55 5.35Z"/></svg>',
   linkedin:
@@ -166,10 +168,11 @@ function renderFooter(product) {
           <div>
             <h4 class="footer-col-title">Categorias</h4>
             <ul class="footer-links">
-              <li><a href="${homePrefix}index.html#catalogo">💻 Tecnologia</a></li>
-              <li><a href="${homePrefix}index.html#catalogo">🏠 Casa</a></li>
-              <li><a href="${homePrefix}index.html#catalogo">🪴 Decoração</a></li>
-              <li><a href="${homePrefix}index.html#catalogo">👟 Estilo & Bem-estar</a></li>
+              <li><a href="#catalogo" data-category-link="all">🏷️ Todos Produtos</a></li>
+              <li><a href="#catalogo" data-category-link="tecnologia">💻 Tecnologia</a></li>
+              <li><a href="#catalogo" data-category-link="casa">🏠 Casa</a></li>
+              <li><a href="#catalogo" data-category-link="decoracao">🪴 Decoração</a></li>
+              <li><a href="#catalogo" data-category-link="estilo">👟 Estilo & Bem-estar</a></li>
             </ul>
           </div>
         </div>
@@ -206,6 +209,7 @@ function renderHome(products) {
   if (!list) return;
 
   const sorted = [...products].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  catalogProducts = sorted;
   
   if (filterContainer) {
     const storedCategory = localStorage.getItem(ACTIVE_CATEGORY_KEY) || 'todos';
@@ -234,7 +238,7 @@ function renderHome(products) {
           btn.setAttribute('aria-pressed', String(isActive));
         });
         
-        renderFilteredProducts(sorted, category);
+        renderFilteredProducts(catalogProducts, category);
       });
     });
   }
@@ -443,4 +447,29 @@ async function bootstrap() {
   }
 }
 
+document.addEventListener('click', event => {
+  const link = event.target.closest('[data-category-link]')
+  if (!link) return
+
+  event.preventDefault()
+
+  const category = link.dataset.categoryLink
+
+  localStorage.setItem(ACTIVE_CATEGORY_KEY, category)
+
+  // Atualiza visual dos botões de filtro
+  document.querySelectorAll('.category-filter').forEach(btn => {
+    const isActive = btn.dataset.category === category
+    btn.classList.toggle('active', isActive)
+    btn.setAttribute('aria-pressed', String(isActive))
+  })
+
+  // Filtra diretamente com os produtos já carregados
+  if (catalogProducts.length) {
+    renderFilteredProducts(catalogProducts, category)
+  }
+
+  document.querySelector('#catalogo')?.scrollIntoView({ behavior: 'smooth' })
+})
+  
 bootstrap();
