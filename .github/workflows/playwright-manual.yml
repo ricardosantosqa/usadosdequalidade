@@ -1,0 +1,71 @@
+name: Playwright - Execução Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch para executar os testes'
+        required: true
+        default: 'main'
+      browser:
+        description: 'Navegador para execução dos testes'
+        required: true
+        default: 'chromium'
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+          - all
+      headed:
+        description: 'Executar com navegador visível (headed)'
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  testes-playwright:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout da branch selecionada
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Instalar navegadores do Playwright
+        run: npx playwright install --with-deps
+
+      - name: Executar testes E2E
+        run: |
+          BROWSER_ARGS=""
+          if [ "${{ inputs.browser }}" != "all" ]; then
+            BROWSER_ARGS="--project=${{ inputs.browser }}"
+          fi
+
+          HEADED_ARGS=""
+          if [ "${{ inputs.headed }}" = "true" ]; then
+            HEADED_ARGS="--headed"
+          fi
+
+          xvfb-run --auto-servernum npx playwright test $BROWSER_ARGS $HEADED_ARGS
+
+      - name: Publicar relatório HTML do Playwright
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ github.run_number }}
+          path: playwright-report/
+          if-no-files-found: warn
+          retention-days: 7

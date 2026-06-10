@@ -14,6 +14,35 @@ Site estático de vendas para o projeto **Usados de Qualidade**, pensado para fu
    ```
 3. Acesse `http://localhost:8000`.
 
+## Testes E2E com Playwright
+
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
+2. Instale os navegadores do Playwright:
+   ```bash
+   npx playwright install --with-deps
+   ```
+3. Execute os testes:
+   ```bash
+   npm run test:e2e
+   ```
+4. Para executar manualmente com interface:
+   ```bash
+   npm run test:e2e:ui
+   ```
+
+### Execução manual no GitHub Actions
+
+Use o workflow `.github/workflows/playwright-manual.yml`:
+
+1. Abra **Actions** no GitHub.
+2. Selecione **Playwright - Execução Manual**.
+3. Clique em **Run workflow**.
+4. Escolha a **branch** e os parâmetros (`browser` e `headed`).
+5. Ao final, baixe o artefato **playwright-report-*** para abrir o relatório HTML no navegador.
+
 ## Como adicionar ou remover produtos
 
 Cada produto vive em sua própria pasta dentro de `products/<slug>/`.

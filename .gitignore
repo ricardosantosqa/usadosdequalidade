@@ -23,3 +23,9 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 
+# =========================================
+# Node / Playwright
+# =========================================
+node_modules/
+playwright-report/
+test-results/
