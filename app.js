@@ -471,5 +471,20 @@ document.addEventListener('click', event => {
 
   document.querySelector('#catalogo')?.scrollIntoView({ behavior: 'smooth' })
 })
+
+// Export for testing
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    buildWhatsAppUrl,
+    currentPageMessage,
+    getCatalogPath,
+    applyTheme,
+    STORAGE_KEY,
+    DEFAULT_DARK,
+    WHATSAPP_NUMBER,
+    SITE_NAME,
+    PICKUP_LOCATION,
+  };
+}
   
 bootstrap();
