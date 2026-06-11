@@ -22,25 +22,25 @@ const localStorageMock = (() => {
 
 global.localStorage = localStorageMock;
 
-// Constantes que devem corresponder ao app.js
-const STORAGE_KEY = 'usadosdequalidade-theme';
-const DEFAULT_DARK = 'dark';
-const WHATSAPP_NUMBER = '5511982633161';
-const SITE_NAME = 'UsadosDeQualidade';
-const PICKUP_LOCATION = 'Estação Metrô São Judas';
+// Mock window.location.href
+Object.defineProperty(window, 'location', {
+  value: { href: 'http://localhost:8000' },
+  writable: true,
+});
 
-// Funções do app.js para testar (copiadas do arquivo original)
-function buildWhatsAppUrl(message) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
+// Import constants and functions from app.js
+const {
+  STORAGE_KEY,
+  DEFAULT_DARK,
+  WHATSAPP_NUMBER,
+  SITE_NAME,
+  PICKUP_LOCATION,
+  buildWhatsAppUrl,
+  currentPageMessage,
+  getCatalogPath,
+  applyTheme,
+} = require('./app.js');
 
-function currentPageMessage(product) {
-  const link = 'http://localhost:8000';
-  if (product) {
-    return `Olá! Tenho interesse no produto "${product.title}" da ${SITE_NAME}. Link: ${link}`;
-  }
-  return `Olá! Quero fechar negócio com a ${SITE_NAME}. Pode me enviar mais detalhes do catálogo? Link: ${link}`;
-}
 
 // ─── TESTES ─────────────────────────────────────────────────────────────────
 
@@ -146,3 +146,177 @@ describe('Validação de Dados', () => {
     expect(product.paymentMethods.length).toBeGreaterThan(0);
   });
 });
+
+// ─── TESTES ADICIONAIS PARA MELHORAR COBERTURA ─────────────────────────────────
+
+describe('Testes de Cobertura de Funções', () => {
+  test('buildWhatsAppUrl com mensagem contendo caracteres especiais', () => {
+    const message = 'Olá! Tenho interesse em: "Produto" & itens';
+    const url = buildWhatsAppUrl(message);
+    expect(url).toContain(WHATSAPP_NUMBER);
+    expect(url).toContain('text=');
+    // Verifica se a mensagem foi codificada
+    const encoded = encodeURIComponent(message);
+    expect(url).toContain(encoded);
+  });
+
+  test('buildWhatsAppUrl com mensagem vazia', () => {
+    const url = buildWhatsAppUrl('');
+    expect(url).toContain(`https://wa.me/${WHATSAPP_NUMBER}?text=`);
+  });
+
+  test('currentPageMessage com produto contendo caracteres especiais', () => {
+    const product = {
+      title: 'Produto "Especial" & Único',
+      price: 'R$ 999,99',
+    };
+    const message = currentPageMessage(product);
+    expect(message).toContain('Tenho interesse');
+    expect(message).toContain('Produto');
+    expect(message).toContain(SITE_NAME);
+    expect(message).toContain(product.title);
+  });
+
+  test('currentPageMessage com produto sem propriedades', () => {
+    const product = {};
+    const message = currentPageMessage(product);
+    expect(message).toContain('Tenho interesse');
+    expect(message).toContain(SITE_NAME);
+  });
+
+  test('Verificar constantes estão corretas', () => {
+    expect(typeof STORAGE_KEY).toBe('string');
+    expect(typeof DEFAULT_DARK).toBe('string');
+    expect(typeof WHATSAPP_NUMBER).toBe('string');
+    expect(typeof SITE_NAME).toBe('string');
+    expect(typeof PICKUP_LOCATION).toBe('string');
+    
+    expect(STORAGE_KEY.length).toBeGreaterThan(0);
+    expect(SITE_NAME.length).toBeGreaterThan(0);
+  });
+
+  test('localStorage deve funcionar com múltiplas operações', () => {
+    // Teste múltiplas operações
+    localStorage.setItem('key1', 'value1');
+    localStorage.setItem('key2', 'value2');
+    
+    expect(localStorage.getItem('key1')).toBe('value1');
+    expect(localStorage.getItem('key2')).toBe('value2');
+    
+    localStorage.removeItem('key1');
+    expect(localStorage.getItem('key1')).toBeNull();
+    expect(localStorage.getItem('key2')).toBe('value2');
+  });
+
+  test('buildWhatsAppUrl deve preservar ordem dos parâmetros', () => {
+    const message = 'Teste de mensagem';
+    const url = buildWhatsAppUrl(message);
+    
+    // Verifica estrutura
+    expect(url).toMatch(/^https:\/\/wa\.me\/\d+\?text=/);
+    expect(url).toContain('https://wa.me/');
+    expect(url).toContain('?text=');
+  });
+
+  test('getCatalogPath deve retornar caminho relativo para página de produto', () => {
+    // Mock document.body com página de produto
+    document.body.dataset.page = 'product';
+    const path = getCatalogPath();
+    expect(path).toBe('../../catalog.json');
+  });
+
+  test('getCatalogPath deve retornar caminho padrão quando não estiver em página de produto', () => {
+    // Mock document.body sem página de produto
+    delete document.body.dataset.page;
+    const path = getCatalogPath();
+    expect(path).toBe('./catalog.json');
+  });
+
+  test('getCatalogPath deve retornar caminho padrão quando dataset não existir', () => {
+    // Remove dataset completamente
+    const originalDataset = document.body.dataset;
+    Object.defineProperty(document.body, 'dataset', {
+      value: {},
+      writable: true,
+    });
+    const path = getCatalogPath();
+    expect(path).toBe('./catalog.json');
+    // Restaura dataset original
+    Object.defineProperty(document.body, 'dataset', {
+      value: originalDataset,
+      writable: true,
+    });
+  });
+});
+
+describe('applyTheme', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    // Limpa qualquer toggle anterior
+    const toggle = document.querySelector('.theme-toggle');
+    if (toggle) toggle.remove();
+  });
+
+  test('applyTheme deve aplicar tema dark', () => {
+    applyTheme('dark');
+    expect(document.documentElement.dataset.theme).toBe('dark');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe('dark');
+  });
+
+  test('applyTheme deve aplicar tema light', () => {
+    applyTheme('light');
+    expect(document.documentElement.dataset.theme).toBe('light');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe('light');
+  });
+
+  test('applyTheme deve atualizar tema anterior', () => {
+    applyTheme('dark');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe('dark');
+    
+    applyTheme('light');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe('light');
+    expect(document.documentElement.dataset.theme).toBe('light');
+  });
+
+  test('applyTheme deve retornar sem erro quando toggle não existir', () => {
+    // Nenhum toggle no DOM
+    expect(() => applyTheme('dark')).not.toThrow();
+    expect(document.documentElement.dataset.theme).toBe('dark');
+  });
+
+  test('applyTheme deve atualizar toggle quando existir', () => {
+    // Cria um toggle no DOM
+    const toggle = document.createElement('button');
+    toggle.className = 'theme-toggle';
+    toggle.setAttribute('aria-pressed', 'false');
+    
+    const icon = document.createElement('span');
+    icon.className = 'theme-toggle__icon';
+    icon.textContent = '☀';
+    
+    const label = document.createElement('span');
+    label.className = 'theme-toggle__label';
+    label.textContent = 'Tema claro';
+    
+    toggle.appendChild(icon);
+    toggle.appendChild(label);
+    document.body.appendChild(toggle);
+    
+    applyTheme('dark');
+    
+    // Quando theme é 'dark', isDark = true, então aria-pressed = !true = false
+    expect(toggle.getAttribute('aria-pressed')).toBe('false');
+    expect(icon.textContent).toBe('☀');
+    expect(label.textContent).toBe('Tema claro');
+    
+    applyTheme('light');
+    
+    // Quando theme é 'light', isDark = false, então aria-pressed = !false = true
+    expect(toggle.getAttribute('aria-pressed')).toBe('true');
+    expect(icon.textContent).toBe('☾');
+    expect(label.textContent).toBe('Tema escuro');
+  });
+});
+
+
+
