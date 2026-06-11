@@ -4,9 +4,158 @@ Site estático de vendas para o projeto **Usados de Qualidade**, pensado para fu
 
 ---
 
-## 🚀 CI/CD com GitHub Actions e Testes Automatizados
+## 🎓 Trabalho de Conclusão de Disciplina: CI/CD com Testes Automatizados
 
-Este projeto implementa uma pipeline completa de Integração Contínua/Entrega Contínua (CI/CD) usando GitHub Actions, com testes automatizados em cada commit.
+> **📚 Leia o Guia Completo**: [GUIDE.md](./GUIDE.md)  
+> Este documento mapeia cada ponto do trabalho com explicações detalhadas sobre O QUÉ, COMO, POR QUÉ e GANHOS.
+
+Este projeto implementa uma **pipeline de CI/CD completa** usando GitHub Actions com testes automatizados. Abaixo estão os pontos principais do trabalho. Para detalhes profundos sobre cada um, consulte o [GUIDE.md](./GUIDE.md).
+
+---
+
+## 📋 Mapeamento do Trabalho
+
+### 🎯 **OBJETIVO**
+✅ **Configurar uma pipeline para um projeto com testes automatizados**
+
+- [x] Pipeline criada em `.github/workflows/`
+- [x] Testes executam automaticamente
+- [x] Múltiplas formas de disparo configuradas
+- [x] Relatórios armazenados
+
+**📖 Saiba mais**: Seção "Objetivo Principal" em [GUIDE.md](./GUIDE.md#objetivo-principal)
+
+---
+
+### 📢 **FORMAS DE DISPARO**
+✅ **Configurar múltiplas formas de disparo: manual, agendado, a partir de push**
+
+#### 1. **Manual (workflow_dispatch)**
+```yaml
+on:
+  workflow_dispatch:  # Disparo manual
+```
+- Clique "Run workflow" no GitHub Actions
+- Útil para testes sem fazer commit
+
+**📖 Saiba mais**: [GUIDE.md#1-disparo-manual-workflow_dispatch](./GUIDE.md#1-disparo-manual-workflow_dispatch)
+
+#### 2. **Agendado (schedule/cron)**
+```yaml
+on:
+  schedule:
+    - cron: '0 10 * * 1'  # Segunda-feira 10:00
+```
+- Roda automaticamente em horários específicos
+- Valida projeto mesmo sem novos commits
+
+**📖 Saiba mais**: [GUIDE.md#2-disparo-agendado-schedulecron](./GUIDE.md#2-disparo-agendado-schedulecron)
+
+#### 3. **Por Push (push)**
+```yaml
+on:
+  push:
+    branches:
+      - main
+```
+- Roda cada vez que você faz `git push`
+- Feedback imediato na linha de comando
+
+**📖 Saiba mais**: [GUIDE.md#3-disparo-por-push-push](./GUIDE.md#3-disparo-por-push-push)
+
+#### 4. **Por Pull Request (pull_request)**
+```yaml
+on:
+  pull_request:
+    branches:
+      - main
+```
+- Valida código ANTES de fazer merge
+- Resultado aparece no PR
+
+**📖 Saiba mais**: [GUIDE.md#4-disparo-por-pull-request-pull_request](./GUIDE.md#4-disparo-por-pull-request-pull_request)
+
+---
+
+### 📊 **CONFIGURAR RELATÓRIO**
+✅ **Configurar um relatório compatível com o framework e fazer o upload para a pipeline**
+
+#### Framework Utilizado: Jest
+```bash
+npm test --coverage  # Gera relatório de cobertura
+```
+
+#### Upload de Artefatos
+```yaml
+- name: Upload Artefatos
+  uses: actions/upload-artifact@v4
+  with:
+    name: test-results
+    path: coverage/
+    retention-days: 30
+```
+
+**Como acessar:**
+1. GitHub → Actions
+2. Selecione a execução
+3. Scroll para "Artifacts"
+4. Download dos resultados
+
+**📖 Saiba mais**: [GUIDE.md#-configurar-relatório](./GUIDE.md#-configurar-relatório)
+
+---
+
+### 📖 **DOCUMENTAÇÃO README**
+✅ **Criar um README explicando o funcionamento da pipeline e os conceitos aplicados**
+
+Este README explica:
+- ✅ O que é CI/CD
+- ✅ O que é GitHub Actions
+- ✅ Por que usar
+- ✅ Como executar localmente
+- ✅ Estrutura das pipelines
+- ✅ Como visualizar resultados
+- ✅ Conceitos aprendidos
+
+**📖 Saiba mais**: [GUIDE.md#-documentação-readme](./GUIDE.md#-documentação-readme)
+
+---
+
+### ✅ **REGRAS OBRIGATÓRIAS**
+
+1. **Trabalho Individual**  
+   ✅ Implementado por conta própria, sem cópias
+
+2. **Utilizar GitHub Actions**  
+   ✅ `.github/workflows/tests.yml`  
+   ✅ `.github/workflows/pages.yml`
+
+3. **Testes e Pipe Executando com Sucesso**  
+   ✅ 14 testes passando  
+   ✅ 0 vulnerabilidades  
+   ✅ Workflows executando corretamente
+
+4. **Relatório Armazenado na Pipe**  
+   ✅ Cobertura de testes salva  
+   ✅ Artefatos retidos por 30 dias
+
+5. **Utilizar Adequadamente os Conceitos**  
+   ✅ CI/CD bem aplicado  
+   ✅ Documentação educativa
+
+6. **Utilizar Ferramentas Adequadamente**  
+   ✅ Jest para testes  
+   ✅ GitHub Actions para orquestração  
+   ✅ Node.js e Python
+
+7. **Documentação Adequada no README**  
+   ✅ Este arquivo e [GUIDE.md](./GUIDE.md)
+
+**📖 Saiba mais**: [GUIDE.md#-regras-obrigatórias](./GUIDE.md#-regras-obrigatórias)
+
+---
+
+## 🚀 CI/CD com GitHub Actions e Testes Automatizados
 
 ### 📚 O que é CI/CD?
 
